@@ -24,11 +24,11 @@ app.config.from_pyfile("config.py")
 from app import utilities
 
 from app import views
-
-app.config.from_pyfile("config.py")
-from app import utilities
-
 from app.views import page
 app.register_blueprint(page.module)
 
 app.secret_key = utilities.random_state()
+global root_path
+root_path=app.root_path
+ctz=app.app_context()
+ctz.push()
