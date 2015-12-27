@@ -28,7 +28,3 @@ from app.views import page
 app.register_blueprint(page.module)
 
 app.secret_key = utilities.random_state()
-global root_path
-root_path=app.root_path
-ctz=app.app_context()
-ctz.push()
