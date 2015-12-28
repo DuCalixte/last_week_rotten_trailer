@@ -58,3 +58,5 @@ target/
 
 #Flask & VirtualEnv
 venv/
+app_secret.json
+logfile
