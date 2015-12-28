@@ -13,6 +13,7 @@ from flask import session as login_session
 app = Flask('app')
 module = Blueprint('page', __name__, static_folder='static')
 
+
 @module.route('/')
 @module.route('/index')
 def index():
@@ -22,10 +23,11 @@ def index():
 @module.route('/favicon.ico')
 def favicon():
     try:
-        return send_from_directory(os.path.join(app.root_path, 'static','img','fav'),
-                                   '164_Tomato.ico', mimetype='image/vnd.microsoft.icon')
+        return send_from_directory(os.path.join(app.root_path,
+                                                'static', 'img', 'fav'),
+                                   '164_Tomato.ico',
+                                   mimetype='image/vnd.microsoft.icon')
     except:
         print "Unexpected error:", sys.exc_info()[0]
         print "Unexpected error:", sys.exc_info()[1]
         abort(403)
-

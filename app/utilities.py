@@ -53,8 +53,8 @@ def require_login(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         '''
-            Decorator for views that checks that the user is logged in, redirecting
-            to the category page if necessary.
+            Decorator for views that checks that the user is logged in,
+            redirecting to the category page if necessary.
         '''
         email = login_session.get('access_token')
         if email is None:
